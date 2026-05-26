@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings - MediaHub</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mobile-responsive.css">
+</head>
+<body class="page-load">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/></linearGradient></defs>
+        </svg>
+        MediaHub
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count" id="cartCount" style="display: none;">0</span></a>
+        <div class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 260px 1fr; gap: 32px;">
+        <!-- Sidebar -->
+        <aside style="background: white; padding: 32px; border-radius: 20px; height: fit-content; position: sticky; top: 100px;">
+          <nav style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="dashboard.html" class="dashboard-link" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-dark); text-decoration: none;">
+              <span>📊</span> Dashboard
+            </a>
+            <a href="order-history.html" class="dashboard-link" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-dark); text-decoration: none;">
+              <span>📦</span> My Orders
+            </a>
+            <a href="profile.html" class="dashboard-link" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-dark); text-decoration: none;">
+              <span>👤</span> Edit Profile
+            </a>
+            <a href="settings.html" class="dashboard-link active" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--primary); background: var(--bg-gray); font-weight: 600; text-decoration: none;">
+              <span>⚙️</span> Settings
+            </a>
+            <a href="#" class="dashboard-link" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-dark); text-decoration: none;">
+              <span>❤️</span> Favorites
+            </a>
+            <a href="index.html" class="dashboard-link" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--secondary); text-decoration: none; margin-top: 16px;">
+              <span>🚪</span> Logout
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div>
+          <h1 style="margin-bottom: 32px;">Account Settings</h1>
+
+          <!-- Notifications -->
+          <div class="card" style="margin-bottom: 32px;">
+            <h2 style="margin-bottom: 24px;">🔔 Notification Preferences</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <label class="toggle-switch">
+                <input type="checkbox" id="emailNotifications" checked>
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Email Notifications</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Receive order updates via email</div>
+                </div>
+              </label>
+
+              <label class="toggle-switch">
+                <input type="checkbox" id="orderUpdates" checked>
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Order Updates</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Get notified when order status changes</div>
+                </div>
+              </label>
+
+              <label class="toggle-switch">
+                <input type="checkbox" id="promotionalEmails">
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Promotional Emails</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Receive special offers and discounts</div>
+                </div>
+              </label>
+
+              <label class="toggle-switch">
+                <input type="checkbox" id="newAccounts" checked>
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">New Account Alerts</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Notify me when new accounts are available</div>
+                </div>
+              </label>
+            </div>
+
+            <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+              <button class="btn btn-primary" onclick="showToast('Notification preferences saved!', 'success')">Save Preferences</button>
+            </div>
+          </div>
+
+          <!-- Privacy -->
+          <div class="card" style="margin-bottom: 32px;">
+            <h2 style="margin-bottom: 24px;">🔒 Privacy Settings</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <label class="toggle-switch">
+                <input type="checkbox" id="profileVisibility" checked>
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Profile Visibility</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Make your profile visible to others</div>
+                </div>
+              </label>
+
+              <label class="toggle-switch">
+                <input type="checkbox" id="showPurchaseHistory">
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Show Purchase History</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Display your purchases on your profile</div>
+                </div>
+              </label>
+
+              <label class="toggle-switch">
+                <input type="checkbox" id="dataCollection" checked>
+                <span class="toggle-slider"></span>
+                <div>
+                  <div style="font-weight: 600;">Analytics & Data Collection</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Help us improve by sharing usage data</div>
+                </div>
+              </label>
+            </div>
+
+            <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+              <button class="btn btn-primary" onclick="showToast('Privacy settings saved!', 'success')">Save Settings</button>
+            </div>
+          </div>
+
+          <!-- Security -->
+          <div class="card" style="margin-bottom: 32px;">
+            <h2 style="margin-bottom: 24px;">🛡️ Security</h2>
+            
+            <div style="background: var(--bg-gray); padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 600; margin-bottom: 4px;">Two-Factor Authentication (2FA)</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Add an extra layer of security to your account</div>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="showToast('2FA setup coming soon!', 'info')">Enable</button>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-gray); padding: 20px; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 600; margin-bottom: 4px;">Active Sessions</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Manage your active login sessions</div>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="showToast('Session management coming soon!', 'info')">Manage</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="card" style="border: 2px solid #ef4444;">
+            <h2 style="margin-bottom: 12px; color: #ef4444;">⚠️ Danger Zone</h2>
+            <p style="color: var(--text-light); margin-bottom: 24px;">Once you delete your account, there is no going back. Please be certain.</p>
+            
+            <div style="display: flex; gap: 12px;">
+              <button class="btn btn-outline" onclick="showToast('Export started! You will receive an email.', 'success')">Export My Data</button>
+              <button class="btn" style="background: #ef4444; color: white;" onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) showToast('Account deletion request submitted', 'error')">Delete Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--bg-dark); color: white; padding: 64px 0 32px; margin-top: 96px;">
+    <div class="container"><div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; text-align: center; color: rgba(255,255,255,0.5);"><p>&copy; 2026 MediaHub. All rights reserved.</p></div></div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <style>
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .toggle-switch input {
+      display: none;
+    }
+
+    .toggle-slider {
+      width: 48px;
+      height: 24px;
+      background: #e0e0e0;
+      border-radius: 12px;
+      position: relative;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .toggle-switch input:checked + .toggle-slider {
+      background: var(--primary);
+    }
+
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(24px);
+    }
+  </style>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

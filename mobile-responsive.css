@@ -1,0 +1,753 @@
+/* ===================================
+   Mobile-Specific Responsive Styles
+   Complete Mobile & Tablet Optimizations
+   =================================== */
+
+/* ===================================
+   Mobile Dashboard & User Pages
+   =================================== */
+@media (max-width: 768px) {
+  /* Dashboard layout: stack vertically */
+  div[style*="grid-template-columns: 260px 1fr"],
+  div[style*="grid-template-columns: 280px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Mobile sidebar toggle button */
+  .mobile-sidebar-toggle {
+    display: inline-flex !important;
+    margin-bottom: 16px;
+  }
+
+  /* Sidebar becomes drawer on mobile */
+  .dashboard-sidebar,
+  aside[id*="Sidebar"],
+  aside[id*="sidebar"] {
+    position: fixed !important;
+    top: 0;
+    left: -100% !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    z-index: 10001 !important;
+    transition: left 0.3s ease !important;
+    overflow-y: auto !important;
+    border-radius: 0 !important;
+    padding-top: 60px !important;
+  }
+
+  .dashboard-sidebar.open,
+  aside[id*="Sidebar"].open,
+  aside[id*="sidebar"].open {
+    left: 0 !important;
+  }
+
+  /* Sidebar overlay */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  /* Stats cards: 2x2 grid on mobile */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Reduce card padding */
+  .card {
+    padding: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Profile header adjustments */
+  .profile-header {
+    padding: 24px 16px !important;
+  }
+
+  /* Settings toggles: full width */
+  .toggle-switch {
+    padding: 12px 0;
+  }
+}
+
+/* ===================================
+   Mobile Shop & Filters
+   =================================== */
+@media (max-width: 768px) {
+  /* Filter drawer */
+  .filter-drawer,
+  #filterSidebar.mobile-drawer {
+    position: fixed !important;
+    top: 0;
+    left: -100% !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    z-index: 10001 !important;
+    transition: left 0.3s ease !important;
+    overflow-y: auto !important;
+    border-radius: 0 !important;
+    padding: 24px !important;
+  }
+
+  .filter-drawer.open,
+  #filterSidebar.mobile-drawer.open {
+    left: 0 !important;
+  }
+
+  /* Filter drawer header */
+  .mobile-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--bg-gray);
+  }
+
+  .mobile-drawer-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .mobile-drawer-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Filter drawer footer */
+  .mobile-drawer-footer {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 16px 0;
+    border-top: 2px solid var(--bg-gray);
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .mobile-drawer-footer .btn {
+    flex: 1;
+  }
+
+  /* Mobile filter toggle button */
+  #mobileFilterToggle {
+    display: flex !important;
+    position: sticky;
+    top: 80px;
+    z-index: 999;
+    margin-bottom: 16px;
+  }
+
+  /* Active filter count badge */
+  .filter-count-badge {
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+}
+
+/* ===================================
+   Mobile Cart & Checkout
+   =================================== */
+@media (max-width: 768px) {
+  /* Cart layout: stack */
+  div[style*="grid-template-columns: 1fr 380px"],
+  .cart-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Sticky cart summary at bottom */
+  #cartSummary.mobile-sticky {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px !important;
+    background: white !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
+    z-index: 999 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Add padding to cart items to prevent overlap */
+  .cart-items-wrapper {
+    padding-bottom: 200px !important;
+  }
+
+  /* Checkout steps: horizontal scroll */
+  .checkout-steps {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .checkout-steps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-indicator {
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+
+  /* Checkout form: full width */
+  .checkout-step {
+    padding: 24px 16px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* ===================================
+   Mobile Authentication Pages
+   =================================== */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 80px 16px 32px !important;
+    align-items: flex-start !important;
+  }
+
+  .auth-card {
+    padding: 32px 24px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Hide decorative backgrounds on mobile */
+  .auth-container::before,
+  .auth-container::after {
+    display: none !important;
+  }
+
+  .auth-header {
+    margin-bottom: 24px !important;
+  }
+
+  .auth-header h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .auth-header p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Google button: full width */
+  .google-btn {
+    padding: 14px 20px !important;
+  }
+
+  /* Social buttons stack */
+  .social-buttons,
+  div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Password requirements: compact */
+  .password-requirements {
+    padding: 12px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ===================================
+   Mobile Home Page
+   =================================== */
+@media (max-width: 768px) {
+  /* Hero section */
+  section[style*="150px"] {
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .hero-title,
+  section[style*="150px"] h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-subtitle,
+  #typingText {
+    font-size: 1rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hero buttons: stack */
+  .hero-buttons,
+  div[style*="justify-content: center"][style*="gap: 20px"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .hero-buttons .btn,
+  div[style*="justify-content: center"] .btn {
+    width: 100%;
+  }
+
+  /* Hide floating shapes on mobile */
+  .floating-shape {
+    display: none !important;
+  }
+
+  /* Platform grid: 4x2 */
+  .platform-grid,
+  div[style*="grid-template-columns: repeat(auto-fill"] {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Featured accounts: single column */
+  .featured-grid,
+  div[style*="grid-template-columns: repeat(auto-fill, minmax(300px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Features section */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Stats: 2x2 grid */
+  div[style*="text-align: center"][style*="margin-bottom: 48px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  /* Testimonials: single column */
+  .testimonial-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Newsletter form: stack */
+  .newsletter-form,
+  form[style*="max-width: 600px"] {
+    flex-direction: column !important;
+  }
+
+  .newsletter-form .btn,
+  form[style*="max-width: 600px"] .btn {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   Mobile Account Detail Page
+   =================================== */
+@media (max-width: 768px) {
+  /* Stack image and info */
+  .account-detail-layout,
+  div[style*="grid-template-columns: 1fr 380px"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  #accountImage {
+    height: 300px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Sticky buy button at bottom */
+  .mobile-buy-bar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 16px !important;
+    background: white !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
+    z-index: 999 !important;
+    gap: 12px !important;
+  }
+
+  .mobile-buy-bar .btn {
+    flex: 1;
+  }
+
+  /* Add padding to prevent content overlap */
+  .account-detail-content {
+    padding-bottom: 100px !important;
+  }
+
+  /* Tabs: horizontal scroll */
+  .tab-list {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 16px;
+  }
+
+  .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ===================================
+   Mobile About & Contact Pages
+   =================================== */
+@media (max-width: 768px) {
+  /* Team grid: 2 columns */
+  .team-grid,
+  div[style*="grid-template-columns: repeat(auto-fit, minmax(250px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Contact layout: stack */
+  .contact-layout,
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* FAQ items: full width */
+  .faq-item {
+    padding: 16px !important;
+  }
+
+  /* Map placeholder: reduce height */
+  .map-placeholder {
+    height: 200px !important;
+  }
+
+  /* Contact info cards */
+  .contact-info-card {
+    padding: 20px !important;
+  }
+}
+
+/* ===================================
+   Mobile Error Pages
+   =================================== */
+@media (max-width: 768px) {
+  .error-page {
+    padding: 60px 24px !important;
+  }
+
+  .error-icon {
+    font-size: 4rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  .error-code {
+    font-size: 3rem !important;
+  }
+
+  .error-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .error-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Error buttons: stack */
+  .error-buttons,
+  div[style*="justify-content: center"][style*="gap: 16px"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .error-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   Mobile Responsive Tables
+   =================================== */
+@media (max-width: 768px) {
+  /* Convert tables to cards */
+  table.responsive-table,
+  .table-wrapper table {
+    display: block;
+  }
+
+  table.responsive-table thead,
+  .table-wrapper table thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  table.responsive-table tbody,
+  .table-wrapper table tbody {
+    display: block;
+  }
+
+  table.responsive-table tr,
+  .table-wrapper table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid var(--bg-gray);
+    border-radius: 12px;
+    padding: 16px;
+    background: white;
+  }
+
+  table.responsive-table td,
+  .table-wrapper table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid var(--bg-gray);
+  }
+
+  table.responsive-table td:last-child,
+  .table-wrapper table td:last-child {
+    border-bottom: none;
+  }
+
+  table.responsive-table td::before,
+  .table-wrapper table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-light);
+    margin-right: 16px;
+  }
+}
+
+/* ===================================
+   Mobile Forms
+   =================================== */
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 16px !important;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+    padding: 12px !important;
+  }
+
+  /* Stack grid forms */
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Full-width buttons */
+  .btn-block-mobile,
+  .form-actions .btn {
+    width: 100% !important;
+  }
+
+  /* Checkbox and radio: larger touch targets */
+  .checkbox-custom,
+  .radio-custom {
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .checkbox-box,
+  .radio-box {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* ===================================
+   Mobile Bottom Navigation
+   =================================== */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
+    justify-content: space-around !important;
+    padding: 0 !important;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    min-height: 56px;
+    flex: 1;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .bottom-nav-item.active,
+  .bottom-nav-item:hover {
+    color: var(--primary);
+  }
+
+  .bottom-nav-item svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  .bottom-nav-item span {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .bottom-nav-badge {
+    position: absolute;
+    top: 4px;
+    right: 50%;
+    transform: translateX(12px);
+    background: var(--secondary);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    text-align: center;
+  }
+
+  /* Add padding to body to prevent content overlap */
+  body.has-bottom-nav {
+    padding-bottom: 56px !important;
+  }
+}
+
+/* ===================================
+   Small Mobile (< 480px) - Ultra Compact
+   =================================== */
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
+
+  .section-title h2 {
+    font-size: 1.5rem !important;
+  }
+
+  section[style*="150px"] h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem !important;
+  }
+
+  .navbar-logo svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* Stats: 1 column */
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Platform grid: 3x3 */
+  .platform-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Team grid: 1 column */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Account cards: compact */
+  .account-card-stats {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .stat-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Cards: minimal padding */
+  .card {
+    padding: 12px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Buttons: smaller */
+  .btn {
+    padding: 10px 16px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .btn-lg {
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Hero: ultra compact */
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+
+  /* Auth cards: minimal */
+  .auth-card {
+    padding: 24px 16px !important;
+  }
+
+  /* Checkout steps: smaller */
+  .step-indicator {
+    min-width: 80px !important;
+  }
+
+  .step-indicator > div:first-child {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .step-indicator > div:last-child {
+    font-size: 0.7rem !important;
+  }
+}

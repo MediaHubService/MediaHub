@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to MediaHub with Google - Access premium social media accounts marketplace">
+  <title>Login - MediaHub</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mobile-responsive.css">
+  <style>
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 64px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-container::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .auth-container::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      bottom: -80px;
+      left: -80px;
+      animation: float 8s ease-in-out infinite 1s;
+    }
+
+    .auth-card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .auth-header h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .auth-header p {
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 24px;
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 24px;
+    }
+
+    .google-btn:hover {
+      border-color: #4285F4;
+      box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .google-btn:active {
+      transform: translateY(0);
+    }
+
+    .google-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 32px 0;
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    .divider span {
+      padding: 0 16px;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      color: var(--text-medium);
+      font-size: 0.95rem;
+    }
+
+    .features-list li svg {
+      width: 20px;
+      height: 20px;
+      color: #43E97B;
+      flex-shrink: 0;
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0e0;
+      color: var(--text-light);
+    }
+
+    .auth-footer a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .auth-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="page-load">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/></linearGradient></defs>
+        </svg>
+        MediaHub
+      </a>
+      <div class="navbar-actions">
+        <a href="signup.html" class="btn btn-ghost">Create Account</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to access your account</p>
+      </div>
+
+      <!-- Google Sign In Button -->
+      <button id="googleSignIn" class="google-btn">
+        <svg viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        <span id="btnText">Continue with Google</span>
+      </button>
+
+      <!-- Features -->
+      <ul class="features-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Access your purchased accounts
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Track order status in real-time
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Manage your account settings
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          24/7 premium support
+        </li>
+      </ul>
+
+      <div class="divider">
+        <span>Secure & Fast Login</span>
+      </div>
+
+      <!-- Sign Up Link -->
+      <div class="auth-footer">
+        <p>Don't have an account? <a href="signup.html">Sign up free</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/responsive.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    // Google Sign-In initialization
+    let googleClient;
+    
+    // Initialize Google OAuth
+    function initGoogleSignIn() {
+      // Replace with your actual Google Client ID
+      const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+      
+      google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleGoogleResponse,
+        auto_select: false,
+      });
+
+      // Render the One Tap prompt
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          console.log('One Tap not displayed');
+        }
+      });
+    }
+
+    // Handle Google authentication response
+    function handleGoogleResponse(response) {
+      const credential = response.credential;
+      
+      // Decode JWT to get user info
+      const payload = JSON.parse(atob(credential.split('.')[1]));
+      
+      console.log('User Info:', {
+        name: payload.name,
+        email: payload.email,
+        picture: payload.picture,
+        sub: payload.sub
+      });
+
+      // Show loading state
+      showLoading(true);
+
+      // Simulate API call to your backend
+      setTimeout(() => {
+        // Store user session
+        const userData = {
+          id: payload.sub,
+          name: payload.name,
+          email: payload.email,
+          picture: payload.picture,
+          token: credential,
+          loginTime: new Date().toISOString()
+        };
+
+        localStorage.setItem('mediahub_user', JSON.stringify(userData));
+        localStorage.setItem('mediahub_auth_token', credential);
+
+        showToast('Login successful! Redirecting...', 'success');
+
+        // Redirect to dashboard
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      }, 1500);
+    }
+
+    // Google button click handler
+    document.getElementById('googleSignIn').addEventListener('click', function() {
+      showLoading(true);
+      
+      // Trigger Google Sign-In flow
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          // Fallback: use popup mode
+          google.accounts.oauth2.initTokenClient({
+            client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+            scope: 'email profile',
+            callback: (tokenResponse) => {
+              // Fetch user info
+              fetchUserInfo(tokenResponse.access_token);
+            },
+          }).requestAccessToken();
+        }
+      });
+    });
+
+    // Fetch user info from Google API
+    function fetchUserInfo(accessToken) {
+      fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      })
+      .then(response => response.json())
+      .then(userInfo => {
+        handleGoogleResponse({
+          credential: createJWT(userInfo)
+        });
+      })
+      .catch(error => {
+        showLoading(false);
+        showToast('Login failed. Please try again.', 'error');
+        console.error('Error fetching user info:', error);
+      });
+    }
+
+    // Create simple JWT-like token (for demo purposes)
+    function createJWT(userInfo) {
+      const header = btoa(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
+      const payload = btoa(JSON.stringify({
+        sub: userInfo.sub,
+        name: userInfo.name,
+        email: userInfo.email,
+        picture: userInfo.picture,
+        iat: Date.now()
+      }));
+      const signature = btoa('demo-signature');
+      return `${header}.${payload}.${signature}`;
+    }
+
+    // Show/hide loading state
+    function showLoading(isLoading) {
+      const btn = document.getElementById('googleSignIn');
+      const btnText = document.getElementById('btnText');
+      
+      if (isLoading) {
+        btn.disabled = true;
+        btnText.innerHTML = '<span class="loading-spinner"></span> Signing in...';
+      } else {
+        btn.disabled = false;
+        btnText.textContent = 'Continue with Google';
+      }
+    }
+
+    // Check if user is already logged in
+    function checkAuthStatus() {
+      const user = localStorage.getItem('mediahub_user');
+      if (user) {
+        const userData = JSON.parse(user);
+        // Optionally redirect to dashboard if already logged in
+        // window.location.href = 'dashboard.html';
+      }
+    }
+
+    // Initialize on page load
+    window.addEventListener('load', function() {
+      checkAuthStatus();
+      // initGoogleSignIn(); // Uncomment when you have a real Google Client ID
+    });
+
+    // Demo mode - simulate Google login for testing
+    document.getElementById('googleSignIn').addEventListener('click', function(e) {
+      // Remove this in production - this is just for demo
+      if (document.getElementById('googleSignIn').disabled) return;
+      
+      // Simulate Google login for demonstration
+      showLoading(true);
+      
+      setTimeout(() => {
+        const demoUser = {
+          id: 'demo-user-123',
+          name: 'Demo User',
+          email: 'user@gmail.com',
+          picture: 'https://via.placeholder.com/150',
+          token: 'demo-token',
+          loginTime: new Date().toISOString()
+        };
+
+        localStorage.setItem('mediahub_user', JSON.stringify(demoUser));
+        localStorage.setItem('mediahub_auth_token', 'demo-token');
+
+        showToast('Demo login successful! Redirecting...', 'success');
+
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

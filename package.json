@@ -1,0 +1,48 @@
+{
+  "name": "mediahub",
+  "version": "1.0.0",
+  "description": "Premium social media accounts marketplace - Buy verified accounts for Instagram, TikTok, YouTube, Twitter/X, Facebook, LinkedIn, Twitch, and Pinterest",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write \"**/*.{js,css,html,json}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html,json}\""
+  },
+  "keywords": [
+    "social-media",
+    "marketplace",
+    "instagram",
+    "tiktok",
+    "youtube",
+    "twitter",
+    "facebook",
+    "linkedin",
+    "twitch",
+    "pinterest",
+    "accounts",
+    "buy",
+    "sell"
+  ],
+  "author": "MediaHub",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.8",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mediahub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mediahub/issues"
+  },
+  "homepage": "https://mediahub.com"
+}

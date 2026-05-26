@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MediaHub</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mobile-responsive.css">
+</head>
+<body class="page-load">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/></linearGradient></defs>
+        </svg>
+        MediaHub
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count" id="cartCount" style="display: none;">0</span></a>
+        <div class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>Have questions? We'd love to hear from you</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+        <!-- Contact Form -->
+        <div class="card" style="animation: fadeInLeft 0.6s ease;">
+          <h3 style="margin-bottom: 32px;">Send Us a Message</h3>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label">Your Name *</label>
+              <input type="text" class="form-input" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Subject *</label>
+              <select class="form-select" required>
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Customer Support</option>
+                <option value="sales">Sales Question</option>
+                <option value="technical">Technical Issue</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-input" placeholder="Tell us how we can help you..." required style="min-height: 150px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="animation: fadeInRight 0.6s ease;">
+          <div class="card card-hover" style="margin-bottom: 24px;">
+            <div style="display: flex; gap: 16px; align-items: start;">
+              <div style="font-size: 2.5rem;">📧</div>
+              <div>
+                <h3 style="margin-bottom: 8px;">Email Us</h3>
+                <p style="color: var(--text-light); margin-bottom: 4px;">For general inquiries:</p>
+                <a href="mailto:support@mediahub.com" style="font-weight: 600;">support@mediahub.com</a>
+                <p style="color: var(--text-light); margin-top: 8px; margin-bottom: 4px;">For sales questions:</p>
+                <a href="mailto:sales@mediahub.com" style="font-weight: 600;">sales@mediahub.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" style="margin-bottom: 24px;">
+            <div style="display: flex; gap: 16px; align-items: start;">
+              <div style="font-size: 2.5rem;">📞</div>
+              <div>
+                <h3 style="margin-bottom: 8px;">Call Us</h3>
+                <p style="color: var(--text-light); margin-bottom: 4px;">Customer Support:</p>
+                <a href="tel:+15551234567" style="font-weight: 600;">+1 (555) 123-4567</a>
+                <p style="color: var(--text-light); margin-top: 8px; margin-bottom: 4px;">Available 24/7</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" style="margin-bottom: 24px;">
+            <div style="display: flex; gap: 16px; align-items: start;">
+              <div style="font-size: 2.5rem;">📍</div>
+              <div>
+                <h3 style="margin-bottom: 8px;">Visit Us</h3>
+                <p style="color: var(--text-light); margin-bottom: 4px;">MediaHub Headquarters</p>
+                <p style="color: var(--text-dark);">123 Digital Avenue<br>San Francisco, CA 94102<br>United States</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover">
+            <div style="display: flex; gap: 16px; align-items: start;">
+              <div style="font-size: 2.5rem;">⏰</div>
+              <div>
+                <h3 style="margin-bottom: 8px;">Business Hours</h3>
+                <p style="color: var(--text-light); margin-bottom: 4px;">Customer Support: 24/7</p>
+                <p style="color: var(--text-light); margin-bottom: 4px;">Sales Team: Mon-Fri 9AM-6PM PST</p>
+                <p style="color: var(--text-light);">Office Hours: Mon-Fri 9AM-5PM PST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-top: 96px;">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find quick answers to common questions</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="faq-item card" style="margin-bottom: 16px; cursor: pointer;" onclick="toggleFaq(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; font-size: 1.125rem;">How do I purchase an account?</h3>
+              <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+            </div>
+            <div class="faq-answer" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bg-gray); color: var(--text-medium);">
+              Simply browse our catalog, select the account you want, add it to your cart, and proceed through our secure checkout process. You'll receive account credentials via email within minutes of purchase.
+            </div>
+          </div>
+
+          <div class="faq-item card" style="margin-bottom: 16px; cursor: pointer;" onclick="toggleFaq(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; font-size: 1.125rem;">Are the accounts verified and safe?</h3>
+              <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+            </div>
+            <div class="faq-answer" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bg-gray); color: var(--text-medium);">
+              Yes! Every account on our platform goes through a thorough verification process. We check authenticity, engagement rates, and ensure all accounts meet our quality standards before listing.
+            </div>
+          </div>
+
+          <div class="faq-item card" style="margin-bottom: 16px; cursor: pointer;" onclick="toggleFaq(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; font-size: 1.125rem;">What payment methods do you accept?</h3>
+              <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+            </div>
+            <div class="faq-answer" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bg-gray); color: var(--text-medium);">
+              We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and cryptocurrency payments. All transactions are secured with industry-standard encryption.
+            </div>
+          </div>
+
+          <div class="faq-item card" style="margin-bottom: 16px; cursor: pointer;" onclick="toggleFaq(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; font-size: 1.125rem;">Is there a refund policy?</h3>
+              <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+            </div>
+            <div class="faq-answer" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bg-gray); color: var(--text-medium);">
+              Yes, we offer a 30-day money-back guarantee on all purchases. If you're not satisfied with your account, contact our support team and we'll process your refund.
+            </div>
+          </div>
+
+          <div class="faq-item card" style="cursor: pointer;" onclick="toggleFaq(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; font-size: 1.125rem;">How long does account transfer take?</h3>
+              <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+            </div>
+            <div class="faq-answer" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bg-gray); color: var(--text-medium);">
+              Most account transfers are completed within 5-30 minutes after payment confirmation. You'll receive all necessary credentials and instructions via email immediately.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--bg-dark); color: white; padding: 64px 0 32px; margin-top: 96px;">
+    <div class="container"><div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; text-align: center; color: rgba(255,255,255,0.5);"><p>&copy; 2026 MediaHub. All rights reserved.</p></div></div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></div>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/responsive.js"></script>
+  <script>
+    // FAQ toggle
+    function toggleFaq(element) {
+      const answer = element.querySelector('.faq-answer');
+      const icon = element.querySelector('.faq-icon');
+      
+      if (answer.style.display === 'none') {
+        answer.style.display = 'block';
+        answer.style.animation = 'fadeInUp 0.3s ease';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.style.display = 'none';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order History - MediaHub</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mobile-responsive.css">
+</head>
+<body class="page-load">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/></linearGradient></defs>
+        </svg>
+        MediaHub
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count" id="cartCount" style="display: none;">0</span></a>
+        <div class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <h1 style="margin-bottom: 32px;">Order History</h1>
+
+      <!-- Filter Tabs -->
+      <div class="tabs" style="margin-bottom: 32px;" id="orderTabs">
+        <div class="tab-list">
+          <div class="tab-item active" data-tab="all-orders">All Orders</div>
+          <div class="tab-item" data-tab="processing">Processing</div>
+          <div class="tab-item" data-tab="completed">Completed</div>
+          <div class="tab-indicator"></div>
+        </div>
+      </div>
+
+      <!-- Orders List -->
+      <div id="ordersList">
+        <!-- Order 1 -->
+        <div class="card order-card" style="margin-bottom: 24px; animation: fadeInUp 0.5s ease 0.1s both;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+            <div>
+              <h3 style="margin-bottom: 4px;">Order #ORD-2026-001</h3>
+              <p style="color: var(--text-light); margin: 0;">May 20, 2026 at 2:45 PM</p>
+            </div>
+            <span style="background: var(--accent-1); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 700;">Completed</span>
+          </div>
+          
+          <div style="background: var(--bg-gray); padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+            <div style="display: flex; gap: 16px; margin-bottom: 12px;">
+              <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #f09433, #bc1888);"></div>
+              <div style="flex: 1;">
+                <div style="font-weight: 600;">@travel.vibes</div>
+                <div style="color: var(--text-light); font-size: 0.875rem;">Instagram • 125K Followers</div>
+              </div>
+              <div style="font-weight: 700;">$499</div>
+            </div>
+            <div style="display: flex; gap: 16px;">
+              <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #25F4EE, #FE2C55);"></div>
+              <div style="flex: 1;">
+                <div style="font-weight: 600;">@dance.king</div>
+                <div style="color: var(--text-light); font-size: 0.875rem;">TikTok • 450K Followers</div>
+              </div>
+              <div style="font-weight: 700;">$799</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.25rem; font-weight: 700;">Total: $1,298</div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-outline btn-sm view-details">View Details</button>
+              <button class="btn btn-primary btn-sm">Download</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order 2 -->
+        <div class="card order-card" style="margin-bottom: 24px; animation: fadeInUp 0.5s ease 0.2s both;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+            <div>
+              <h3 style="margin-bottom: 4px;">Order #ORD-2026-002</h3>
+              <p style="color: var(--text-light); margin: 0;">May 22, 2026 at 10:30 AM</p>
+            </div>
+            <span style="background: var(--accent-2); color: var(--text-dark); padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 700;">Processing</span>
+          </div>
+          
+          <div style="background: var(--bg-gray); padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+            <div style="display: flex; gap: 16px;">
+              <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #FF0000, #CC0000);"></div>
+              <div style="flex: 1;">
+                <div style="font-weight: 600;">Tech Reviews Pro</div>
+                <div style="color: var(--text-light); font-size: 0.875rem;">YouTube • 89K Subscribers</div>
+              </div>
+              <div style="font-weight: 700;">$1,299</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.875rem;">
+              <span>Order Progress</span>
+              <span style="font-weight: 600;">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.25rem; font-weight: 700;">Total: $1,299</div>
+            <button class="btn btn-outline btn-sm view-details">View Details</button>
+          </div>
+        </div>
+
+        <!-- Order 3 -->
+        <div class="card order-card" style="margin-bottom: 24px; animation: fadeInUp 0.5s ease 0.3s both;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+            <div>
+              <h3 style="margin-bottom: 4px;">Order #ORD-2026-003</h3>
+              <p style="color: var(--text-light); margin: 0;">May 24, 2026 at 5:15 PM</p>
+            </div>
+            <span style="background: var(--primary); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 700;">Pending</span>
+          </div>
+          
+          <div style="background: var(--bg-gray); padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+            <div style="display: flex; gap: 16px; margin-bottom: 12px;">
+              <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #1DA1F2, #0D8BD9);"></div>
+              <div style="flex: 1;">
+                <div style="font-weight: 600;">@crypto.insider</div>
+                <div style="color: var(--text-light); font-size: 0.875rem;">Twitter • 67K Followers</div>
+              </div>
+              <div style="font-weight: 700;">$349</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.25rem; font-weight: 700;">Total: $349</div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-outline btn-sm view-details">View Details</button>
+              <button class="btn btn-primary btn-sm">Pay Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--bg-dark); color: white; padding: 64px 0 32px; margin-top: 96px;">
+    <div class="container"><div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; text-align: center; color: rgba(255,255,255,0.5);"><p>&copy; 2026 MediaHub. All rights reserved.</p></div></div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    initTabs(document.getElementById('orderTabs'));
+  </script>
+</body>
+</html>

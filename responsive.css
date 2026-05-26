@@ -1,0 +1,447 @@
+/* ===================================
+   Responsive Styles
+   =================================== */
+
+/* ===================================
+   Responsive Utility Classes
+   =================================== */
+
+/* Visibility Utilities */
+.hide-mobile { display: inherit !important; }
+.show-mobile { display: none !important; }
+.hide-tablet { display: inherit !important; }
+.show-tablet { display: none !important; }
+.hide-desktop { display: inherit !important; }
+.show-desktop { display: none !important; }
+
+/* Layout Utilities */
+.mobile-full-width { width: 100%; }
+.mobile-stack { flex-direction: column; }
+.mobile-center { text-align: center; }
+.mobile-text-sm { font-size: 0.875rem; }
+
+/* Spacing Utilities */
+.mobile-p-sm { padding: 8px; }
+.mobile-m-sm { margin: 8px; }
+.mobile-px-sm { padding-left: 8px; padding-right: 8px; }
+.mobile-mx-sm { margin-left: 8px; margin-right: 8px; }
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: inherit !important; }
+  .hide-tablet { display: inherit !important; }
+  .show-tablet { display: none !important; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet { display: none !important; }
+  .show-tablet { display: inherit !important; }
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop { display: none !important; }
+  .show-desktop { display: inherit !important; }
+}
+
+/* ===================================
+   Tablet (768px - 1024px)
+   =================================== */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  /* Sidebar layouts: reduce width */
+  aside[style*="260px"],
+  aside[style*="280px"] {
+    width: 220px !important;
+  }
+
+  /* Dashboard layout */
+  .dashboard-layout,
+  div[style*="grid-template-columns: 260px"] {
+    gap: 24px !important;
+  }
+
+  /* Shop page adjustments */
+  #filterSidebar {
+    position: static;
+  }
+
+  /* Account detail page */
+  aside[style*="sticky"] {
+    position: static !important;
+  }
+
+  /* Navigation adjustments */
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
+
+  /* Buttons */
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Stats cards */
+  div[style*="grid-template-columns: repeat(4"] {
+    gap: 16px;
+  }
+}
+
+/* ===================================
+   Mobile (< 768px)
+   =================================== */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Navigation */
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Grid layouts */
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sections */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Hero section */
+  section[style*="150px"] h1 {
+    font-size: 2.5rem !important;
+  }
+
+  #typingText {
+    font-size: 1.125rem !important;
+  }
+
+  /* Shop page */
+  .grid[style*="280px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #filterSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    border-radius: 0;
+  }
+
+  #filterSidebar.active {
+    transform: translateX(0);
+  }
+
+  #mobileFilterToggle {
+    display: flex !important;
+  }
+
+  .grid[style*="auto-fill"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cart page */
+  .grid[style*="380px"],
+  .grid[style*="48px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #cartSummary {
+    position: static !important;
+  }
+
+  .card[style*="flex"] {
+    flex-direction: column !important;
+  }
+
+  /* Account detail page */
+  .grid[style*="380px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #accountImage {
+    height: 250px !important;
+  }
+
+  /* Tabs */
+  .tab-list {
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+  }
+
+  .tab-item {
+    white-space: nowrap;
+    font-size: 0.875rem;
+  }
+
+  /* Footer */
+  .grid[style*="margin-bottom: 48px"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg);
+  }
+
+  /* Stats */
+  .grid[style*="text-align: center"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Buttons */
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  /* Newsletter form */
+  form[style*="flex"] {
+    flex-direction: column !important;
+  }
+
+  /* Account cards */
+  .account-card-actions {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Reduce animations on mobile */
+  .floating-shape {
+    display: none;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Toast notifications */
+  .toast {
+    min-width: auto;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+/* ===================================
+   Small Mobile (< 480px)
+   =================================== */
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  section[style*="150px"] h1 {
+    font-size: 2rem !important;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar-logo svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .account-card-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stat-label {
+    text-transform: none;
+  }
+
+  /* Pagination */
+  #paginationNumbers {
+    display: none !important;
+  }
+}
+
+/* ===================================
+   Large Desktop (> 1440px)
+   =================================== */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .navbar,
+  .back-to-top,
+  .toast-container,
+  .scroll-progress,
+  .floating-shape {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
+/* ===================================
+   Landscape Orientation
+   =================================== */
+@media (max-width: 1024px) and (orientation: landscape) {
+  section[style*="150px"] {
+    padding-top: 100px !important;
+  }
+
+  section[style*="150px"] h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* ===================================
+   High Resolution Displays
+   =================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .account-card-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ===================================
+   Dark Mode Support (Future)
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  /* Uncomment when dark mode is implemented */
+  /*
+  :root {
+    --bg-light: #1A1A2E;
+    --bg-white: #16213E;
+    --text-dark: #E2E8F0;
+    --text-medium: #CBD5E0;
+    --text-light: #A0AEC0;
+  }
+  */
+}
+
+/* ===================================
+   Accessibility Improvements
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .floating-shape {
+    animation: none !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 10000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}

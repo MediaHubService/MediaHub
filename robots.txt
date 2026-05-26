@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important pages
+Allow: /shop/
+Allow: /about/
+Allow: /contact/
+
+# Sitemap
+Sitemap: https://mediahub.com/sitemap.xml
+
+# Crawl-delay (polite crawling)
+Crawl-delay: 1
