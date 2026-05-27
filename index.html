@@ -3909,6 +3909,1277 @@
             }
         }
 
+        /* ADMIN MODAL */
+        .admin-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .admin-modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .dark .admin-modal {
+            background: var(--card-bg);
+        }
+
+        .admin-modal-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--admin-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .admin-modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .admin-modal-close:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .admin-modal-body {
+            padding: 24px;
+        }
+
+        .admin-modal-footer {
+            padding: 24px;
+            border-top: 1px solid var(--admin-border);
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .admin-form-group {
+            margin-bottom: 20px;
+        }
+
+        .admin-form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .admin-form-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .admin-form-input:focus {
+            outline: none;
+            border-color: var(--admin-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .admin-form-textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .admin-form-textarea:focus {
+            outline: none;
+            border-color: var(--admin-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .admin-form-select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dark .admin-form-select {
+            background: var(--bg-secondary);
+        }
+
+        .admin-form-select:focus {
+            outline: none;
+            border-color: var(--admin-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .admin-form-error {
+            color: var(--admin-error);
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .admin-form-error.visible {
+            display: block;
+        }
+
+        .ad-image-preview {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .ad-image-preview.visible {
+            display: block;
+        }
+
+        .admin-checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .admin-checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .admin-checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* ADVERTISEMENT DISPLAY */
+        .ad-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .ad-banner:hover {
+            transform: translateY(-2px);
+        }
+
+        .ad-banner-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .ad-banner-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .ad-banner h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .ad-banner p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .ad-sidebar-widget {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ad-sidebar-widget:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+        }
+
+        .ad-sidebar-widget img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .ad-sidebar-widget h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+
+        .ad-sidebar-widget p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .ad-card {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ad-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2);
+        }
+
+        .ad-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .ad-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .ad-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .ad-card p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .admin-modal {
+                max-height: 95vh;
+            }
+
+            .admin-modal-header,
+            .admin-modal-body,
+            .admin-modal-footer {
+                padding: 16px;
+            }
+        }
+
+        /* PAYMENT RECEIPT MODAL */
+        .payment-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .payment-modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .payment-modal {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dark .payment-modal {
+            background: #1e293b;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .payment-modal-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--admin-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .payment-modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .payment-modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .payment-modal-close:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .payment-modal-body {
+            padding: 24px;
+        }
+
+        .payment-modal-footer {
+            padding: 24px;
+            border-top: 1px solid var(--admin-border);
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .receipt-order-summary {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .receipt-order-summary h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .receipt-total {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 2px solid var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .upload-area {
+            border: 2px dashed var(--primary);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .upload-area:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .upload-area svg {
+            width: 48px;
+            height: 48px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .upload-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .receipt-preview {
+            margin-top: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .receipt-preview.visible {
+            display: block;
+        }
+
+        .receipt-preview img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .payment-info-box {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .payment-info-box svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .payment-info-box p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* CONVERSATION ROOM */
+        .conversation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .conversation-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .conversation-container {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 800px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dark .conversation-container {
+            background: #1e293b;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .conversation-header {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .conversation-info {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .conversation-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .conversation-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .conversation-close {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .conversation-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .conversation-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .dark .conversation-messages {
+            background: #0f172a;
+        }
+
+        .message {
+            display: flex;
+            gap: 12px;
+            animation: messageSlide 0.3s ease;
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user-message {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .bot-avatar {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .admin-avatar {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .user-avatar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .dark .message-content {
+            background: #1e293b;
+        }
+
+        .message.bot-message .message-content {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .message.admin-message .message-content {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .message.user-message .message-content {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .message-time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .message-image {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .message-image:hover {
+            transform: scale(1.02);
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 16px;
+            width: fit-content;
+            margin-left: 48px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .dark .typing-indicator {
+            background: #1e293b;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            animation: typingBounce 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .conversation-input-area {
+            padding: 20px 24px;
+            background: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .dark .conversation-input-area {
+            background: #1e293b;
+            border-top-color: #334155;
+        }
+
+        /* ==========================================
+           COMPREHENSIVE DARK MODE TEXT IMPROVEMENTS
+           ========================================== */
+
+        /* Admin Panel Text */
+        .dark .admin-card {
+            color: #f1f5f9;
+        }
+
+        .dark .admin-card h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .admin-card-header h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .admin-nav-item {
+            color: #e2e8f0;
+        }
+
+        .dark .admin-nav-item:hover {
+            color: #f8fafc;
+        }
+
+        .dark .admin-nav-item.active {
+            color: #f8fafc;
+        }
+
+        .dark .admin-stat-label {
+            color: #cbd5e1 !important;
+        }
+
+        .dark .admin-stat-value {
+            color: #f8fafc !important;
+        }
+
+        .dark .admin-stat-change {
+            color: #94a3b8;
+        }
+
+        .dark .admin-table {
+            color: #e2e8f0;
+        }
+
+        .dark .admin-table th {
+            color: #f1f5f9 !important;
+        }
+
+        .dark .admin-table td {
+            color: #e2e8f0;
+        }
+
+        .dark .admin-tab {
+            color: #cbd5e1;
+        }
+
+        .dark .admin-tab.active {
+            color: #f8fafc;
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .dark .admin-btn {
+            color: #f1f5f9;
+        }
+
+        .dark .admin-form-label {
+            color: #e2e8f0 !important;
+        }
+
+        .dark .admin-form-input {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .admin-form-input::placeholder {
+            color: #64748b;
+        }
+
+        .dark .admin-form-textarea {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .admin-form-textarea::placeholder {
+            color: #64748b;
+        }
+
+        .dark .admin-form-select {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .admin-modal-body {
+            color: #e2e8f0;
+        }
+
+        /* Payment Modal Text */
+        .dark .payment-modal {
+            color: #f1f5f9;
+        }
+
+        .dark .payment-modal-header h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .receipt-order-summary {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .dark .receipt-order-summary h4 {
+            color: #f8fafc !important;
+        }
+
+        .dark .receipt-upload-section label {
+            color: #e2e8f0 !important;
+        }
+
+        .dark .upload-area {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: #6366f1;
+        }
+
+        .dark .upload-area p {
+            color: #e2e8f0;
+        }
+
+        .dark .receipt-message-section label {
+            color: #e2e8f0 !important;
+        }
+
+        .dark .receipt-message-section textarea {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .receipt-message-section textarea::placeholder {
+            color: #64748b;
+        }
+
+        .dark .payment-info-box {
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        .dark .payment-info-box p {
+            color: #cbd5e1;
+        }
+
+        /* Conversation Room Text */
+        .dark .conversation-header h3 {
+            color: #ffffff !important;
+        }
+
+        .dark .conversation-status {
+            color: #e2e8f0;
+        }
+
+        .dark .message-content {
+            background: #1e293b;
+            color: #f1f5f9;
+        }
+
+        .dark .message-time {
+            color: #94a3b8;
+        }
+
+        .dark .typing-indicator {
+            background: #1e293b;
+        }
+
+        .dark .input-wrapper input {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .input-wrapper input::placeholder {
+            color: #64748b;
+        }
+
+        /* Checkout Text */
+        .dark .checkout-step {
+            color: #e2e8f0;
+        }
+
+        .dark .checkout-form h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .checkout-form label {
+            color: #e2e8f0 !important;
+        }
+
+        .dark .checkout-form input {
+            background: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .dark .checkout-form input::placeholder {
+            color: #64748b;
+        }
+
+        .dark .checkout-summary {
+            background: #0f172a !important;
+            color: #e2e8f0;
+        }
+
+        .dark .checkout-summary h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .payment-total {
+            color: #f8fafc;
+        }
+
+        .dark .total-label {
+            color: #cbd5e1;
+        }
+
+        .dark .total-amount {
+            color: #f8fafc !important;
+        }
+
+        .dark .crypto-equiv {
+            color: #94a3b8;
+        }
+
+        /* Main Site Text */
+        .dark .hero-section h1 {
+            color: #f8fafc !important;
+        }
+
+        .dark .hero-section h2 {
+            color: #f8fafc !important;
+        }
+
+        .dark .hero-section p {
+            color: #cbd5e1;
+        }
+
+        .dark .section-title {
+            color: #f8fafc !important;
+        }
+
+        .dark .section-subtitle {
+            color: #cbd5e1;
+        }
+
+        .dark .account-card {
+            color: #e2e8f0;
+        }
+
+        .dark .account-card h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .account-card p {
+            color: #cbd5e1;
+        }
+
+        .dark .metric-label {
+            color: #94a3b8 !important;
+        }
+
+        .dark .metric-value {
+            color: #f8fafc !important;
+        }
+
+        /* Onboarding Text */
+        .dark .onboarding-slide h2 {
+            color: #f8fafc !important;
+        }
+
+        .dark .onboarding-slide p {
+            color: #cbd5e1;
+        }
+
+        .dark .onboarding-slide li {
+            color: #cbd5e1;
+        }
+
+        /* Modal Text */
+        .dark .modal-content h2 {
+            color: #f8fafc !important;
+        }
+
+        .dark .modal-content h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .modal-content p {
+            color: #cbd5e1;
+        }
+
+        /* Footer Text */
+        .dark .footer {
+            color: #cbd5e1;
+        }
+
+        .dark .footer h3 {
+            color: #f8fafc !important;
+        }
+
+        .dark .footer p {
+            color: #cbd5e1;
+        }
+
+        .dark .footer-links a {
+            color: #cbd5e1;
+        }
+
+        .dark .footer-links a:hover {
+            color: #f8fafc;
+        }
+
+        /* Toast Notifications */
+        .dark .toast {
+            background: #1e293b;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        /* Badges and Labels */
+        .dark .platform-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+        }
+
+        .dark .admin-status-badge {
+            color: #f1f5f9;
+        }
+
+        /* Tables */
+        .dark table {
+            color: #e2e8f0;
+        }
+
+        .dark th {
+            color: #f1f5f9 !important;
+        }
+
+        .dark td {
+            color: #e2e8f0;
+        }
+
+        /* Links */
+        .dark a {
+            color: #a5b4fc;
+        }
+
+        .dark a:hover {
+            color: #c7d2fe;
+        }
+
+        /* Mobile Navigation */
+        .dark .mobile-nav-item {
+            color: #cbd5e1;
+        }
+
+        .dark .mobile-nav-item.active {
+            color: #f8fafc;
+        }
+
+        /* Scrollbar for better visibility */
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .input-wrapper input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .dark .input-wrapper input {
+            background: #0f172a;
+            border-color: #334155;
+            color: white;
+        }
+
+        .input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .send-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .send-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ADMIN PAYMENTS */
+        .admin-nav-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #ef4444;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+            animation: badgePulse 2s infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .urgent-row {
+            background: rgba(239, 68, 68, 0.05);
+            animation: urgentFlash 2s infinite;
+        }
+
+        @keyframes urgentFlash {
+            0%, 100% { background: rgba(239, 68, 68, 0.05); }
+            50% { background: rgba(239, 68, 68, 0.1); }
+        }
+
+        .wait-time.urgent {
+            color: #ef4444;
+            font-weight: 700;
+            animation: pulse 1.5s infinite;
+        }
+
+        .buyer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .payment-modal,
+            .conversation-container {
+                max-height: 95vh;
+                border-radius: 16px;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+        }
+
         /* PULL TO REFRESH */
         .pull-to-refresh-indicator {
             position: fixed;
@@ -5086,6 +6357,14 @@
                     </svg>
                     <span>Orders</span>
                 </div>
+                <div class="admin-nav-item" onclick="navigateAdminPage('payments')" style="position: relative;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Payments</span>
+                    <span class="admin-nav-badge" id="pendingPaymentsBadge">0</span>
+                </div>
                 <div class="admin-nav-item" onclick="navigateAdminPage('conversations')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -5322,6 +6601,92 @@
                     </div>
                 </div>
 
+                <div class="admin-page-content" id="admin-payments" style="display: none;">
+                    <!-- Statistics -->
+                    <div class="admin-stats-grid">
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="pendingPaymentsCount">0</div>
+                                <div class="admin-stat-label">Pending Verification</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #10b981, #059669); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="confirmedPaymentsCount">0</div>
+                                <div class="admin-stat-label">Confirmed Today</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="rejectedPaymentsCount">0</div>
+                                <div class="admin-stat-label">Rejected</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="totalPaymentAmount">$0</div>
+                                <div class="admin-stat-label">Total Amount</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Queue -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3>Payment Verification Queue</h3>
+                            <div class="payment-filters" style="display: flex; gap: 8px;">
+                                <button class="admin-tab active" onclick="filterPayments('pending')">Pending</button>
+                                <button class="admin-tab" onclick="filterPayments('confirmed')">Confirmed</button>
+                                <button class="admin-tab" onclick="filterPayments('rejected')">Rejected</button>
+                            </div>
+                        </div>
+                        <div class="admin-card-body">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Buyer</th>
+                                        <th>Order</th>
+                                        <th>Amount</th>
+                                        <th>Receipt</th>
+                                        <th>Time Waiting</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminPaymentsTableBody">
+                                    <!-- Payments rendered here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="admin-page-content" id="admin-conversations" style="display: none;">
                     <div class="admin-card">
                         <div class="admin-card-header">
@@ -5334,13 +6699,93 @@
                 </div>
 
                 <div class="admin-page-content" id="admin-advertisements" style="display: none;">
+                    <!-- Statistics Cards -->
+                    <div class="admin-stats-grid">
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="totalAdsCount">0</div>
+                                <div class="admin-stat-label">Total Ads</div>
+                            </div>
+                        </div>
+
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #10b981, #059669); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="activeAdsCount">0</div>
+                                <div class="admin-stat-label">Active Ads</div>
+                            </div>
+                        </div>
+
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="totalImpressions">0</div>
+                                <div class="admin-stat-label">Total Impressions</div>
+                            </div>
+                        </div>
+
+                        <div class="admin-stat-card" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white;">
+                            <div class="admin-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="admin-stat-info">
+                                <div class="admin-stat-value" id="totalRevenue">$0</div>
+                                <div class="admin-stat-label">Total Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advertisements Table -->
                     <div class="admin-card">
                         <div class="admin-card-header">
                             <h3>Advertisement Management</h3>
-                            <button class="admin-btn admin-btn-primary">Create Ad</button>
+                            <button class="admin-btn admin-btn-primary" onclick="openAdModal()">Create Ad</button>
                         </div>
                         <div class="admin-card-body">
-                            <p style="color: var(--text-muted);">Create, manage, and track advertisements</p>
+                            <!-- Filter Tabs -->
+                            <div class="admin-tabs" style="margin-bottom: 20px;">
+                                <button class="admin-tab active" onclick="filterAdminAds('all')">All Ads</button>
+                                <button class="admin-tab" onclick="filterAdminAds('active')">Active</button>
+                                <button class="admin-tab" onclick="filterAdminAds('inactive')">Inactive</button>
+                                <button class="admin-tab" onclick="filterAdminAds('scheduled')">Scheduled</button>
+                            </div>
+
+                            <!-- Ads Table -->
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ad Title</th>
+                                        <th>Position</th>
+                                        <th>Budget</th>
+                                        <th>Duration</th>
+                                        <th>Impressions</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminAdsTableBody">
+                                    <!-- Ads will be rendered here -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -5377,6 +6822,211 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- PAYMENT RECEIPT MODAL -->
+    <div class="payment-modal-overlay" id="paymentReceiptModal">
+        <div class="payment-modal">
+            <div class="payment-modal-header">
+                <h3>Submit Payment Receipt</h3>
+                <button class="payment-modal-close" onclick="closePaymentModal()">&times;</button>
+            </div>
+            <div class="payment-modal-body">
+                <!-- Order Summary -->
+                <div class="receipt-order-summary">
+                    <h4>Order Details</h4>
+                    <div id="receiptOrderItems"></div>
+                    <div class="receipt-total" id="receiptTotal">Total: $0.00</div>
+                </div>
+                
+                <!-- Receipt Upload -->
+                <div class="receipt-upload-section">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Upload Payment Receipt *</label>
+                    <div class="upload-area" id="receiptUploadArea" onclick="document.getElementById('receiptFileInput').click()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17,8 12,3 7,8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p style="margin: 8px 0 0 0; font-weight: 600;">Click to upload receipt image</p>
+                        <p class="upload-hint">PNG, JPG (Max 5MB)</p>
+                    </div>
+                    <input type="file" id="receiptFileInput" accept="image/*" style="display:none" onchange="handleReceiptUpload(event)">
+                    <div class="receipt-preview" id="receiptPreview"></div>
+                </div>
+                
+                <!-- Optional Message -->
+                <div class="receipt-message-section" style="margin-top: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Message to Admin (Optional)</label>
+                    <textarea id="receiptMessage" placeholder="Add any notes about your payment..." style="width: 100%; padding: 12px; border: 1px solid var(--admin-border); border-radius: 8px; font-size: 14px; resize: vertical; min-height: 80px; font-family: inherit;"></textarea>
+                </div>
+                
+                <!-- Payment Info -->
+                <div class="payment-info-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <p>After submitting, you'll be connected to an admin in the conversation room for verification.</p>
+                </div>
+            </div>
+            <div class="payment-modal-footer">
+                <button class="admin-btn" onclick="closePaymentModal()">Cancel</button>
+                <button class="admin-btn admin-btn-primary" onclick="submitPaymentReceipt()" id="submitReceiptBtn">
+                    Submit Receipt & Continue →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONVERSATION ROOM -->
+    <div class="conversation-overlay" id="conversationRoom">
+        <div class="conversation-container">
+            <!-- Header -->
+            <div class="conversation-header">
+                <div class="conversation-info">
+                    <div class="conversation-avatar">A</div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 18px;">Payment Verification</h3>
+                        <p class="conversation-status" style="margin: 4px 0 0 0;">
+                            <span class="status-dot"></span>
+                            <span id="conversationStatusText">Waiting for admin...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="conversation-close" onclick="closeConversation()">&times;</button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div class="conversation-messages" id="conversationMessages">
+                <!-- Messages will be dynamically added -->
+            </div>
+            
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator" style="display:none;">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+            
+            <!-- Message Input -->
+            <div class="conversation-input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="handleMessageKeypress(event)">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADVERTISEMENT MODAL -->
+    <div class="admin-modal-overlay" id="adModal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h3 id="adModalTitle">Create Advertisement</h3>
+                <button class="admin-modal-close" onclick="closeAdModal()">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <input type="hidden" id="adId">
+                
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Ad Title *</label>
+                    <input type="text" class="admin-form-input" id="adTitle" placeholder="Enter ad title">
+                    <div class="admin-form-error" id="adTitleError">Title is required</div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Description *</label>
+                    <textarea class="admin-form-textarea" id="adDescription" placeholder="Enter ad description"></textarea>
+                    <div class="admin-form-error" id="adDescriptionError">Description is required</div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Image URL</label>
+                    <input type="url" class="admin-form-input" id="adImageUrl" placeholder="https://example.com/image.jpg" oninput="previewAdImage(this.value)">
+                    <img class="ad-image-preview" id="adImagePreview" alt="Ad preview">
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Destination Link *</label>
+                    <input type="url" class="admin-form-input" id="adLink" placeholder="https://example.com">
+                    <div class="admin-form-error" id="adLinkError">Valid URL is required</div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Ad Position *</label>
+                    <select class="admin-form-select" id="adPosition">
+                        <option value="homepage-banner">Homepage Banner</option>
+                        <option value="sidebar-widget">Sidebar Widget</option>
+                        <option value="between-cards">Between Account Cards</option>
+                        <option value="account-detail">Account Detail Page</option>
+                    </select>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Duration (Days) *</label>
+                    <input type="number" class="admin-form-input" id="adDuration" min="1" value="30" oninput="calculateEndDate()">
+                    <div class="admin-form-error" id="adDurationError">Duration must be greater than 0</div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Budget (USD) *</label>
+                    <input type="number" class="admin-form-input" id="adBudget" min="1" step="0.01" placeholder="100.00">
+                    <div class="admin-form-error" id="adBudgetError">Budget must be greater than 0</div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Target Audience</label>
+                    <div class="admin-checkbox-group">
+                        <label class="admin-checkbox-item">
+                            <input type="checkbox" id="adTargetInstagram" value="instagram">
+                            Instagram Users
+                        </label>
+                        <label class="admin-checkbox-item">
+                            <input type="checkbox" id="adTargetTiktok" value="tiktok">
+                            TikTok Users
+                        </label>
+                        <label class="admin-checkbox-item">
+                            <input type="checkbox" id="adTargetYoutube" value="youtube">
+                            YouTube Users
+                        </label>
+                        <label class="admin-checkbox-item">
+                            <input type="checkbox" id="adTargetTwitter" value="twitter">
+                            Twitter Users
+                        </label>
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Start Date *</label>
+                    <input type="date" class="admin-form-input" id="adStartDate" onchange="calculateEndDate()">
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">End Date (Auto-calculated)</label>
+                    <input type="date" class="admin-form-input" id="adEndDate" readonly>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Status</label>
+                    <select class="admin-form-select" id="adStatus">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="scheduled">Scheduled</option>
+                    </select>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="admin-btn" onclick="closeAdModal()">Cancel</button>
+                <button class="admin-btn admin-btn-primary" onclick="saveAdvertisement()">Create Ad</button>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -5565,7 +7215,30 @@
 
             grid.innerHTML = filtered.map((account, index) => {
                 const isInWishlist = state.wishlist.find(item => item.id === account.id);
-                return `
+                
+                // Inject ad every 6th account
+                let adHTML = '';
+                if ((index + 1) % 6 === 0) {
+                    const activeAds = advertisements.filter(ad => ad.status === 'active' && ad.position === 'between-cards');
+                    if (activeAds.length > 0) {
+                        const ad = activeAds[Math.floor((index / 6)) % activeAds.length];
+                        adHTML = `
+                            <div class="ad-card" onclick="trackAdClick(${ad.id}, '${ad.link}')" data-ad-id="${ad.id}">
+                                <span class="ad-badge">Sponsored</span>
+                                ${ad.imageUrl ? `<img src="${ad.imageUrl}" alt="${ad.title}">` : ''}
+                                <h3>${ad.title}</h3>
+                                <p>${ad.description}</p>
+                            </div>
+                        `;
+                        
+                        // Track impression
+                        setTimeout(() => {
+                            trackAdImpression(ad.id);
+                        }, 100);
+                    }
+                }
+                
+                return adHTML + `
                 <div class="account-card ${account.platform}" style="animation-delay: ${index * 0.05}s" onclick="openAccountModal(${account.id})">
                     <div class="account-header">
                         <button class="wishlist-btn ${isInWishlist ? 'active' : ''}" onclick="event.stopPropagation(); ${isInWishlist ? 'removeFromWishlist' : 'addToWishlist'}(${account.id})">
@@ -6864,6 +8537,7 @@
                 accounts: 'Account Management',
                 users: 'User Management',
                 orders: 'Order Management',
+                payments: 'Payment Verification',
                 conversations: 'Conversation Rooms',
                 advertisements: 'Advertisements',
                 settings: 'Settings',
@@ -7142,6 +8816,1111 @@
         window.addEventListener('appinstalled', () => {
             installButton.style.display = 'none';
             showToast('MediaHub installed!', 'success');
+        });
+
+        // ==========================================
+        // ADVERTISEMENT MANAGEMENT
+        // ==========================================
+
+        // Advertisement Data
+        let advertisements = JSON.parse(localStorage.getItem('advertisements')) || [
+            {
+                id: 1,
+                title: 'Premium Instagram Accounts',
+                description: 'Get verified Instagram accounts with high engagement',
+                imageUrl: '',
+                link: 'https://example.com/instagram',
+                position: 'homepage-banner',
+                duration: 30,
+                budget: 500,
+                targetAudience: ['instagram'],
+                startDate: new Date().toISOString().split('T')[0],
+                endDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                status: 'active',
+                impressions: 1250,
+                clicks: 89
+            },
+            {
+                id: 2,
+                title: 'TikTok Growth Package',
+                description: 'Boost your TikTok presence with our premium accounts',
+                imageUrl: '',
+                link: 'https://example.com/tiktok',
+                position: 'between-cards',
+                duration: 14,
+                budget: 250,
+                targetAudience: ['tiktok'],
+                startDate: new Date().toISOString().split('T')[0],
+                endDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                status: 'active',
+                impressions: 890,
+                clicks: 67
+            }
+        ];
+
+        let currentAdFilter = 'all';
+
+        // Modal Functions
+        function openAdModal(adId = null) {
+            const modal = document.getElementById('adModal');
+            const modalTitle = document.getElementById('adModalTitle');
+            
+            // Reset form
+            resetAdForm();
+
+            if (adId) {
+                // Edit mode
+                const ad = advertisements.find(a => a.id === adId);
+                if (!ad) return;
+
+                modalTitle.textContent = 'Edit Advertisement';
+                document.getElementById('adId').value = ad.id;
+                document.getElementById('adTitle').value = ad.title;
+                document.getElementById('adDescription').value = ad.description;
+                document.getElementById('adImageUrl').value = ad.imageUrl || '';
+                document.getElementById('adLink').value = ad.link;
+                document.getElementById('adPosition').value = ad.position;
+                document.getElementById('adDuration').value = ad.duration;
+                document.getElementById('adBudget').value = ad.budget;
+                document.getElementById('adStartDate').value = ad.startDate;
+                document.getElementById('adEndDate').value = ad.endDate;
+                document.getElementById('adStatus').value = ad.status;
+
+                // Set target audience checkboxes
+                ad.targetAudience.forEach(target => {
+                    const checkbox = document.getElementById(`adTarget${target.charAt(0).toUpperCase() + target.slice(1)}`);
+                    if (checkbox) checkbox.checked = true;
+                });
+
+                // Show image preview if exists
+                if (ad.imageUrl) {
+                    previewAdImage(ad.imageUrl);
+                }
+
+                // Update button text
+                document.querySelector('#adModal .admin-btn-primary').textContent = 'Update Ad';
+            } else {
+                // Create mode
+                modalTitle.textContent = 'Create Advertisement';
+                document.querySelector('#adModal .admin-btn-primary').textContent = 'Create Ad';
+                
+                // Set default start date to today
+                document.getElementById('adStartDate').value = new Date().toISOString().split('T')[0];
+                calculateEndDate();
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeAdModal() {
+            const modal = document.getElementById('adModal');
+            modal.classList.remove('active');
+            resetAdForm();
+        }
+
+        function resetAdForm() {
+            document.getElementById('adId').value = '';
+            document.getElementById('adTitle').value = '';
+            document.getElementById('adDescription').value = '';
+            document.getElementById('adImageUrl').value = '';
+            document.getElementById('adLink').value = '';
+            document.getElementById('adPosition').value = 'homepage-banner';
+            document.getElementById('adDuration').value = '30';
+            document.getElementById('adBudget').value = '';
+            document.getElementById('adStartDate').value = '';
+            document.getElementById('adEndDate').value = '';
+            document.getElementById('adStatus').value = 'active';
+
+            // Reset checkboxes
+            ['Instagram', 'Tiktok', 'Youtube', 'Twitter'].forEach(target => {
+                const checkbox = document.getElementById(`adTarget${target}`);
+                if (checkbox) checkbox.checked = false;
+            });
+
+            // Hide image preview
+            document.getElementById('adImagePreview').classList.remove('visible');
+
+            // Hide errors
+            document.querySelectorAll('.admin-form-error').forEach(err => err.classList.remove('visible'));
+        }
+
+        function previewAdImage(url) {
+            const preview = document.getElementById('adImagePreview');
+            if (url && url.startsWith('http')) {
+                preview.src = url;
+                preview.classList.add('visible');
+            } else {
+                preview.classList.remove('visible');
+            }
+        }
+
+        function calculateEndDate() {
+            const startDate = document.getElementById('adStartDate').value;
+            const duration = parseInt(document.getElementById('adDuration').value);
+
+            if (startDate && duration > 0) {
+                const start = new Date(startDate);
+                const end = new Date(start.getTime() + duration * 24 * 60 * 60 * 1000);
+                document.getElementById('adEndDate').value = end.toISOString().split('T')[0];
+            }
+        }
+
+        // CRUD Functions
+        function saveAdvertisement() {
+            // Get form values
+            const id = document.getElementById('adId').value;
+            const title = document.getElementById('adTitle').value.trim();
+            const description = document.getElementById('adDescription').value.trim();
+            const imageUrl = document.getElementById('adImageUrl').value.trim();
+            const link = document.getElementById('adLink').value.trim();
+            const position = document.getElementById('adPosition').value;
+            const duration = parseInt(document.getElementById('adDuration').value);
+            const budget = parseFloat(document.getElementById('adBudget').value);
+            const startDate = document.getElementById('adStartDate').value;
+            const endDate = document.getElementById('adEndDate').value;
+            const status = document.getElementById('adStatus').value;
+
+            // Get target audience
+            const targetAudience = [];
+            ['instagram', 'tiktok', 'youtube', 'twitter'].forEach(target => {
+                const checkbox = document.getElementById(`adTarget${target.charAt(0).toUpperCase() + target.slice(1)}`);
+                if (checkbox && checkbox.checked) {
+                    targetAudience.push(target);
+                }
+            });
+
+            // Validation
+            let isValid = true;
+
+            if (!title) {
+                document.getElementById('adTitleError').classList.add('visible');
+                isValid = false;
+            } else {
+                document.getElementById('adTitleError').classList.remove('visible');
+            }
+
+            if (!description) {
+                document.getElementById('adDescriptionError').classList.add('visible');
+                isValid = false;
+            } else {
+                document.getElementById('adDescriptionError').classList.remove('visible');
+            }
+
+            if (!link || !link.startsWith('http')) {
+                document.getElementById('adLinkError').classList.add('visible');
+                isValid = false;
+            } else {
+                document.getElementById('adLinkError').classList.remove('visible');
+            }
+
+            if (!duration || duration <= 0) {
+                document.getElementById('adDurationError').classList.add('visible');
+                isValid = false;
+            } else {
+                document.getElementById('adDurationError').classList.remove('visible');
+            }
+
+            if (!budget || budget <= 0) {
+                document.getElementById('adBudgetError').classList.add('visible');
+                isValid = false;
+            } else {
+                document.getElementById('adBudgetError').classList.remove('visible');
+            }
+
+            if (!isValid) {
+                showToast('Please fix the errors in the form', 'error');
+                return;
+            }
+
+            // Save ad
+            if (id) {
+                // Update existing ad
+                const index = advertisements.findIndex(a => a.id === parseInt(id));
+                if (index !== -1) {
+                    advertisements[index] = {
+                        ...advertisements[index],
+                        title,
+                        description,
+                        imageUrl,
+                        link,
+                        position,
+                        duration,
+                        budget,
+                        targetAudience,
+                        startDate,
+                        endDate,
+                        status
+                    };
+                    showToast('Advertisement updated successfully!', 'success');
+                }
+            } else {
+                // Create new ad
+                const newAd = {
+                    id: Date.now(),
+                    title,
+                    description,
+                    imageUrl,
+                    link,
+                    position,
+                    duration,
+                    budget,
+                    targetAudience,
+                    startDate,
+                    endDate,
+                    status,
+                    impressions: 0,
+                    clicks: 0
+                };
+                advertisements.push(newAd);
+                showToast('Advertisement created successfully!', 'success');
+            }
+
+            // Save to localStorage
+            saveAdsToStorage();
+
+            // Close modal and refresh table
+            closeAdModal();
+            renderAdvertisementsList(currentAdFilter);
+        }
+
+        function editAdvertisement(adId) {
+            openAdModal(adId);
+        }
+
+        function deleteAdvertisement(adId) {
+            if (confirm('Are you sure you want to delete this advertisement?')) {
+                advertisements = advertisements.filter(a => a.id !== adId);
+                saveAdsToStorage();
+                renderAdvertisementsList(currentAdFilter);
+                showToast('Advertisement deleted', 'success');
+            }
+        }
+
+        function toggleAdStatus(adId) {
+            const ad = advertisements.find(a => a.id === adId);
+            if (ad) {
+                ad.status = ad.status === 'active' ? 'inactive' : 'active';
+                saveAdsToStorage();
+                renderAdvertisementsList(currentAdFilter);
+                showToast(`Advertisement ${ad.status === 'active' ? 'activated' : 'paused'}`, 'success');
+            }
+        }
+
+        function renderAdvertisementsList(filter = 'all') {
+            const tbody = document.getElementById('adminAdsTableBody');
+            if (!tbody) return;
+
+            currentAdFilter = filter;
+
+            // Filter ads
+            let filteredAds = advertisements;
+            if (filter !== 'all') {
+                filteredAds = advertisements.filter(ad => ad.status === filter);
+            }
+
+            // Update statistics
+            updateAdStats();
+
+            // Render table
+            if (filteredAds.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                            No advertisements found. Click "Create Ad" to add one.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = filteredAds.map(ad => {
+                const positionLabels = {
+                    'homepage-banner': 'Homepage Banner',
+                    'sidebar-widget': 'Sidebar Widget',
+                    'between-cards': 'Between Cards',
+                    'account-detail': 'Account Detail'
+                };
+
+                return `
+                    <tr>
+                        <td>
+                            <div style="font-weight: 600;">${ad.title}</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">${ad.description.substring(0, 50)}...</div>
+                        </td>
+                        <td>${positionLabels[ad.position] || ad.position}</td>
+                        <td style="font-weight: 600; color: var(--primary);">$${ad.budget.toFixed(2)}</td>
+                        <td>${ad.duration} days</td>
+                        <td>${ad.impressions.toLocaleString()}</td>
+                        <td><span class="admin-status-badge ${ad.status}">${ad.status}</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-primary admin-btn-sm" onclick="editAdvertisement(${ad.id})" title="Edit">✎</button>
+                                <button class="admin-btn ${ad.status === 'active' ? 'admin-btn-warning' : 'admin-btn-success'} admin-btn-sm" onclick="toggleAdStatus(${ad.id})" title="${ad.status === 'active' ? 'Pause' : 'Activate'}">
+                                    ${ad.status === 'active' ? '⏸' : '▶'}
+                                </button>
+                                <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="deleteAdvertisement(${ad.id})" title="Delete">✕</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterAdminAds(filter) {
+            // Update active tab
+            document.querySelectorAll('#admin-advertisements .admin-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            renderAdvertisementsList(filter);
+        }
+
+        function updateAdStats() {
+            const totalAds = advertisements.length;
+            const activeAds = advertisements.filter(ad => ad.status === 'active').length;
+            const totalImpressions = advertisements.reduce((sum, ad) => sum + ad.impressions, 0);
+            const totalRevenue = advertisements.reduce((sum, ad) => sum + ad.budget, 0);
+
+            document.getElementById('totalAdsCount').textContent = totalAds;
+            document.getElementById('activeAdsCount').textContent = activeAds;
+            document.getElementById('totalImpressions').textContent = totalImpressions.toLocaleString();
+            document.getElementById('totalRevenue').textContent = '$' + totalRevenue.toLocaleString();
+        }
+
+        function saveAdsToStorage() {
+            localStorage.setItem('advertisements', JSON.stringify(advertisements));
+        }
+
+        // Ad Tracking Functions
+        function trackAdImpression(adId) {
+            const ad = advertisements.find(a => a.id === adId);
+            if (ad) {
+                ad.impressions++;
+                saveAdsToStorage();
+            }
+        }
+
+        function trackAdClick(adId, link) {
+            const ad = advertisements.find(a => a.id === adId);
+            if (ad) {
+                ad.clicks++;
+                saveAdsToStorage();
+                
+                // Open link in new tab
+                window.open(link, '_blank');
+                
+                showToast('Opening ad...', 'info');
+            }
+        }
+
+        // Display Homepage Banner Ads
+        function displayHomepageBanners() {
+            const activeBanners = advertisements.filter(ad => 
+                ad.status === 'active' && 
+                ad.position === 'homepage-banner' &&
+                new Date(ad.startDate) <= new Date() &&
+                new Date(ad.endDate) >= new Date()
+            );
+
+            if (activeBanners.length === 0) return;
+
+            // Find marketplace page and add banner at top
+            const marketplacePage = document.querySelector('[id*="marketplace"]');
+            if (!marketplacePage) return;
+
+            // Create banner container
+            const bannerContainer = document.createElement('div');
+            bannerContainer.id = 'homepageAdBanners';
+            bannerContainer.style.cssText = 'margin-bottom: 24px;';
+
+            activeBanners.forEach(ad => {
+                const banner = document.createElement('div');
+                banner.className = 'ad-banner';
+                banner.onclick = () => trackAdClick(ad.id, ad.link);
+                banner.innerHTML = `
+                    <button class="ad-banner-close" onclick="event.stopPropagation(); this.parentElement.style.display='none';">&times;</button>
+                    ${ad.imageUrl ? `<img src="${ad.imageUrl}" alt="${ad.title}" style="max-width: 100%; border-radius: 8px; margin-bottom: 12px;">` : ''}
+                    <h3>${ad.title}</h3>
+                    <p>${ad.description}</p>
+                `;
+                bannerContainer.appendChild(banner);
+
+                // Track impression
+                setTimeout(() => {
+                    trackAdImpression(ad.id);
+                }, 100);
+            });
+
+            // Insert at top of marketplace page
+            marketplacePage.insertBefore(bannerContainer, marketplacePage.firstChild);
+        }
+
+        // Initialize banners when navigating to marketplace
+        const originalNavigateTo = navigateTo;
+        navigateTo = function(page) {
+            originalNavigateTo(page);
+            if (page === 'marketplace') {
+                setTimeout(() => {
+                    displayHomepageBanners();
+                }, 200);
+            }
+        };
+
+        // Initialize advertisements table when admin page loads
+        const originalNavigateAdminPage = navigateAdminPage;
+        navigateAdminPage = function(page) {
+            originalNavigateAdminPage(page);
+            if (page === 'advertisements') {
+                renderAdvertisementsList('all');
+            }
+        };
+
+        // ==========================================
+        // PAYMENT VERIFICATION & MESSAGING SYSTEM
+        // ==========================================
+
+        // Data Structures
+        let conversations = JSON.parse(localStorage.getItem('conversations')) || [];
+        let payments = JSON.parse(localStorage.getItem('payments')) || [];
+        let currentConversation = null;
+        let botTimers = {};
+        let uploadedReceipt = null;
+
+        // Bot Messages
+        const botMessages = {
+            welcome: "👋 Welcome to Payment Verification! I'll help track your payment status.",
+            receiptReceived: "📸 Receipt uploaded successfully! Notifying admin now...",
+            adminNotified: "🔔 Admin has been notified and will review your payment shortly.",
+            checkingPayment: "⏳ Checking payment status... Please wait.",
+            timeoutWarning: "⏰ It's been 20 minutes and we haven't confirmed your payment yet. Our admin is reviewing it now. Please wait a bit longer.",
+            followUp: "📢 Still waiting for payment confirmation. Your patience is appreciated. We're working on it!",
+            paymentConfirmed: "✅ Great news! Your payment has been confirmed by our admin. We'll send your account details to your email shortly. Thank you for your purchase!",
+            paymentRejected: "❌ Payment could not be verified. Please contact support or resubmit receipt."
+        };
+
+        // Payment Receipt Modal Functions
+        function openPaymentReceiptModal() {
+            // Populate order summary
+            const itemsContainer = document.getElementById('receiptOrderItems');
+            const totalElement = document.getElementById('receiptTotal');
+            
+            let itemsHTML = '';
+            let total = 0;
+            
+            state.cart.forEach(item => {
+                itemsHTML += `
+                    <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--admin-border);">
+                        <div>
+                            <div style="font-weight: 600; font-size: 14px;">${item.username}</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">${item.platform}</div>
+                        </div>
+                        <div style="font-weight: 700; color: var(--primary);">${formatPrice(item.price)}</div>
+                    </div>
+                `;
+                total += item.price;
+            });
+            
+            itemsContainer.innerHTML = itemsHTML;
+            totalElement.textContent = `Total: ${formatPrice(total)}`;
+            
+            // Show modal
+            document.getElementById('paymentReceiptModal').classList.add('active');
+            
+            // Reset form
+            uploadedReceipt = null;
+            document.getElementById('receiptPreview').classList.remove('visible');
+            document.getElementById('receiptFileInput').value = '';
+            document.getElementById('receiptMessage').value = '';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentReceiptModal').classList.remove('active');
+            uploadedReceipt = null;
+        }
+
+        function handleReceiptUpload(event) {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            // Validate file size (5MB max)
+            if (file.size > 5 * 1024 * 1024) {
+                showToast('File size must be less than 5MB', 'error');
+                return;
+            }
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                showToast('Please upload an image file', 'error');
+                return;
+            }
+            
+            // Read file and show preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                uploadedReceipt = e.target.result;
+                
+                const preview = document.getElementById('receiptPreview');
+                preview.innerHTML = `<img src="${uploadedReceipt}" alt="Receipt preview">`;
+                preview.classList.add('visible');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function submitPaymentReceipt() {
+            console.log('submitPaymentReceipt called');
+            
+            // Validate receipt
+            if (!uploadedReceipt) {
+                showToast('Please upload a payment receipt', 'error');
+                return;
+            }
+            
+            console.log('Receipt uploaded, creating payment record...');
+            
+            // Calculate total
+            let total = state.cart.reduce((sum, item) => sum + item.price, 0);
+            
+            // Create payment record
+            const payment = {
+                id: 'pay_' + Date.now(),
+                buyerName: checkoutData.buyerInfo.name,
+                buyerEmail: checkoutData.buyerInfo.email,
+                buyerPhone: checkoutData.buyerInfo.phone,
+                items: [...state.cart],
+                total: total,
+                cryptoType: checkoutData.selectedCrypto,
+                receiptUrl: uploadedReceipt,
+                status: 'pending',
+                submittedAt: Date.now(),
+                confirmedAt: null,
+                rejectedAt: null,
+                notes: document.getElementById('receiptMessage').value
+            };
+            
+            // Create conversation
+            const conversation = {
+                id: 'conv_' + Date.now(),
+                buyerId: payment.id,
+                buyerName: payment.buyerName,
+                buyerEmail: payment.buyerEmail,
+                paymentId: payment.id,
+                status: 'active',
+                messages: [
+                    {
+                        id: 'msg_1',
+                        sender: 'bot',
+                        content: botMessages.welcome,
+                        timestamp: Date.now(),
+                        type: 'text'
+                    },
+                    {
+                        id: 'msg_2',
+                        sender: 'bot',
+                        content: botMessages.receiptReceived,
+                        timestamp: Date.now(),
+                        type: 'text'
+                    },
+                    {
+                        id: 'msg_3',
+                        sender: 'buyer',
+                        content: 'Payment receipt uploaded',
+                        timestamp: Date.now(),
+                        type: 'image',
+                        imageUrl: payment.receiptUrl
+                    }
+                ],
+                createdAt: Date.now(),
+                updatedAt: Date.now(),
+                paymentConfirmed: false
+            };
+            
+            payment.conversationId = conversation.id;
+            
+            // Save to localStorage
+            payments.push(payment);
+            conversations.push(conversation);
+            savePayments();
+            saveConversations();
+            
+            // Close receipt modal
+            closePaymentModal();
+            
+            // Close checkout modal first
+            closeCheckout();
+            
+            // Open conversation room after a brief delay
+            setTimeout(() => {
+                openConversationRoom(conversation.id);
+            }, 300);
+            
+            // Start bot verification
+            startPaymentVerificationBot(conversation.id, payment);
+            
+            // Clear cart
+            state.cart = [];
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+            updateCartBadge();
+            
+            showToast('Receipt submitted! Admin will verify shortly.', 'success');
+        }
+
+        // Conversation Room Functions
+        function openConversationRoom(conversationId) {
+            console.log('Opening conversation room:', conversationId);
+            
+            const conversation = conversations.find(c => c.id === conversationId);
+            if (!conversation) {
+                console.error('Conversation not found:', conversationId);
+                showToast('Error opening conversation', 'error');
+                return;
+            }
+            
+            currentConversation = conversation;
+            
+            // Update status text
+            updateConversationStatus(conversation);
+            
+            // Display messages
+            renderMessages(conversation);
+            
+            // Show modal
+            const conversationRoom = document.getElementById('conversationRoom');
+            conversationRoom.classList.add('active');
+            console.log('Conversation room opened, messages:', conversation.messages.length);
+            
+            // Auto-scroll to bottom
+            setTimeout(() => {
+                const messagesContainer = document.getElementById('conversationMessages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 100);
+        }
+
+        function closeConversation() {
+            document.getElementById('conversationRoom').classList.remove('active');
+            currentConversation = null;
+        }
+
+        function renderMessages(conversation) {
+            const container = document.getElementById('conversationMessages');
+            
+            container.innerHTML = conversation.messages.map(msg => {
+                const time = new Date(msg.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
+                let avatarClass = 'user-avatar';
+                if (msg.sender === 'bot') avatarClass = 'bot-avatar';
+                else if (msg.sender === 'admin') avatarClass = 'admin-avatar';
+                
+                let avatarContent = msg.sender === 'bot' ? '🤖' : msg.sender.charAt(0).toUpperCase();
+                
+                let messageClass = 'message';
+                if (msg.sender === 'buyer') messageClass += ' user-message';
+                else if (msg.sender === 'admin') messageClass += ' admin-message';
+                else messageClass += ' bot-message';
+                
+                let contentHTML = `<p>${msg.content}</p>`;
+                if (msg.type === 'image' && msg.imageUrl) {
+                    contentHTML += `<img src="${msg.imageUrl}" class="message-image" onclick="window.open('${msg.imageUrl}', '_blank')" alt="Receipt">`;
+                }
+                
+                return `
+                    <div class="${messageClass}">
+                        <div class="message-avatar ${avatarClass}">${avatarContent}</div>
+                        <div class="message-content">
+                            ${contentHTML}
+                            <div class="message-time">${time}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const content = input.value.trim();
+            
+            if (!content || !currentConversation) return;
+            
+            // Add message
+            const message = {
+                id: 'msg_' + Date.now(),
+                sender: 'buyer',
+                content: content,
+                timestamp: Date.now(),
+                type: 'text'
+            };
+            
+            currentConversation.messages.push(message);
+            currentConversation.updatedAt = Date.now();
+            
+            // Save and render
+            saveConversations();
+            renderMessages(currentConversation);
+            
+            // Clear input
+            input.value = '';
+            
+            // Auto-scroll
+            const messagesContainer = document.getElementById('conversationMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function handleMessageKeypress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function addMessageToConversation(conversationId, content, sender, type = 'text', imageUrl = null) {
+            const conversation = conversations.find(c => c.id === conversationId);
+            if (!conversation) return;
+            
+            const message = {
+                id: 'msg_' + Date.now(),
+                sender: sender,
+                content: content,
+                timestamp: Date.now(),
+                type: type,
+                imageUrl: imageUrl
+            };
+            
+            conversation.messages.push(message);
+            conversation.updatedAt = Date.now();
+            
+            saveConversations();
+            
+            // If this is the current conversation, render it
+            if (currentConversation && currentConversation.id === conversationId) {
+                renderMessages(conversation);
+                
+                // Auto-scroll
+                setTimeout(() => {
+                    const messagesContainer = document.getElementById('conversationMessages');
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 100);
+            }
+        }
+
+        // Bot Functions
+        function startPaymentVerificationBot(conversationId, paymentData) {
+            // Send admin notified message
+            setTimeout(() => {
+                addBotMessage(conversationId, botMessages.adminNotified);
+            }, 2000);
+            
+            // Start 20-minute countdown
+            startBotCountdown(conversationId, paymentData);
+        }
+
+        function startBotCountdown(conversationId, paymentData) {
+            const countdownDuration = 20 * 60 * 1000; // 20 minutes
+            
+            botTimers[conversationId] = {
+                startTime: Date.now(),
+                duration: countdownDuration,
+                timer: setTimeout(() => {
+                    // Check if admin has responded
+                    const conversation = conversations.find(c => c.id === conversationId);
+                    if (conversation && !conversation.paymentConfirmed) {
+                        // Send timeout warning
+                        addBotMessage(conversationId, botMessages.timeoutWarning);
+                        
+                        // Schedule another message in 10 minutes
+                        setTimeout(() => {
+                            const conv = conversations.find(c => c.id === conversationId);
+                            if (conv && !conv.paymentConfirmed) {
+                                addBotMessage(conversationId, botMessages.followUp);
+                            }
+                        }, 10 * 60 * 1000);
+                    }
+                }, countdownDuration)
+            };
+        }
+
+        function addBotMessage(conversationId, message) {
+            // Show typing indicator first
+            showTypingIndicator();
+            
+            // Add message after delay (simulate typing)
+            setTimeout(() => {
+                hideTypingIndicator();
+                addMessageToConversation(conversationId, message, 'bot');
+            }, 1500);
+        }
+
+        function showTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.style.display = 'flex';
+                
+                // Scroll to show typing indicator
+                const messagesContainer = document.getElementById('conversationMessages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        function confirmPaymentByAdmin(conversationId) {
+            // Stop countdown timer
+            if (botTimers[conversationId]) {
+                clearTimeout(botTimers[conversationId].timer);
+                delete botTimers[conversationId];
+            }
+            
+            // Send confirmation message
+            addBotMessage(conversationId, botMessages.paymentConfirmed);
+            
+            // Update conversation status
+            const conversation = conversations.find(c => c.id === conversationId);
+            if (conversation) {
+                conversation.paymentConfirmed = true;
+                conversation.status = 'confirmed';
+                saveConversations();
+                updateConversationStatus(conversation);
+            }
+        }
+
+        function updateConversationStatus(conversation) {
+            const statusText = document.getElementById('conversationStatusText');
+            if (!statusText) return;
+            
+            if (conversation.paymentConfirmed) {
+                statusText.textContent = 'Payment Confirmed ✓';
+            } else if (conversation.status === 'active') {
+                statusText.textContent = 'Waiting for admin...';
+            } else {
+                statusText.textContent = 'Conversation Closed';
+            }
+        }
+
+        // Admin Payment Management Functions
+        function renderPaymentsList(filter = 'pending') {
+            const tbody = document.getElementById('adminPaymentsTableBody');
+            if (!tbody) return;
+            
+            // Filter payments
+            let filteredPayments = payments.filter(p => p.status === filter);
+            
+            // Sort by time (oldest first for pending)
+            if (filter === 'pending') {
+                filteredPayments.sort((a, b) => a.submittedAt - b.submittedAt);
+            }
+            
+            // Update statistics
+            updatePaymentStats();
+            
+            // Render table
+            if (filteredPayments.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                            No ${filter} payments found.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            tbody.innerHTML = filteredPayments.map(payment => {
+                const waitTime = getWaitTime(payment.submittedAt);
+                const isUrgent = waitTime > 20; // minutes
+                
+                return `
+                    <tr class="${isUrgent ? 'urgent-row' : ''}">
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div class="buyer-avatar">${payment.buyerName.charAt(0)}</div>
+                                <div>
+                                    <div style="font-weight: 600;">${payment.buyerName}</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">${payment.buyerEmail}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="font-size: 12px;">${payment.items.length} item(s)</div>
+                            <div style="font-weight: 600;">Order #${payment.id.slice(-6)}</div>
+                        </td>
+                        <td style="font-weight: 700; color: var(--primary);">${formatPrice(payment.total)}</td>
+                        <td>
+                            ${payment.receiptUrl ? 
+                                `<button class="admin-btn admin-btn-primary admin-btn-sm" onclick="viewReceipt('${payment.receiptUrl}')">View</button>` :
+                                '<span style="color: var(--text-muted);">No receipt</span>'
+                            }
+                        </td>
+                        <td>
+                            <span class="wait-time ${isUrgent ? 'urgent' : ''}">${waitTime} min</span>
+                        </td>
+                        <td><span class="admin-status-badge ${payment.status}">${payment.status}</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-success admin-btn-sm" onclick="confirmPayment(${payment.id})" ${payment.status !== 'pending' ? 'disabled' : ''}>
+                                    ✓ Confirm
+                                </button>
+                                <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="rejectPayment(${payment.id})" ${payment.status !== 'pending' ? 'disabled' : ''}>
+                                    ✕ Reject
+                                </button>
+                                <button class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAdminConversation('${payment.conversationId}')">
+                                    💬 Chat
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterPayments(filter) {
+            // Update active tab
+            document.querySelectorAll('#admin-payments .admin-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderPaymentsList(filter);
+        }
+
+        function confirmPayment(paymentId) {
+            // Find payment - handle both number and string IDs
+            const payment = payments.find(p => p.id == paymentId);
+            if (!payment) {
+                showToast('Payment not found', 'error');
+                return;
+            }
+            
+            // Update payment status
+            payment.status = 'confirmed';
+            payment.confirmedAt = Date.now();
+            payment.confirmedBy = 'admin';
+            
+            savePayments();
+            
+            // Trigger bot confirmation message
+            confirmPaymentByAdmin(payment.conversationId);
+            
+            showToast('Payment confirmed! Bot has notified the buyer.', 'success');
+            
+            // Refresh table
+            renderPaymentsList('pending');
+        }
+
+        function rejectPayment(paymentId) {
+            const payment = payments.find(p => p.id == paymentId);
+            if (!payment) {
+                showToast('Payment not found', 'error');
+                return;
+            }
+            
+            // Update status
+            payment.status = 'rejected';
+            payment.rejectedAt = Date.now();
+            
+            savePayments();
+            
+            // Send bot message
+            addBotMessage(payment.conversationId, botMessages.paymentRejected);
+            
+            showToast('Payment rejected. Buyer has been notified.', 'warning');
+            
+            renderPaymentsList('pending');
+        }
+
+        function viewReceipt(receiptUrl) {
+            window.open(receiptUrl, '_blank');
+        }
+
+        function openAdminConversation(conversationId) {
+            openConversationRoom(conversationId);
+        }
+
+        function getWaitTime(submittedAt) {
+            const now = Date.now();
+            const diff = now - submittedAt;
+            return Math.floor(diff / 60000); // minutes
+        }
+
+        function updatePaymentStats() {
+            const pending = payments.filter(p => p.status === 'pending').length;
+            const confirmed = payments.filter(p => p.status === 'confirmed').length;
+            const rejected = payments.filter(p => p.status === 'rejected').length;
+            const total = payments.reduce((sum, p) => sum + p.total, 0);
+            
+            const pendingEl = document.getElementById('pendingPaymentsCount');
+            const confirmedEl = document.getElementById('confirmedPaymentsCount');
+            const rejectedEl = document.getElementById('rejectedPaymentsCount');
+            const totalEl = document.getElementById('totalPaymentAmount');
+            const badgeEl = document.getElementById('pendingPaymentsBadge');
+            
+            if (pendingEl) pendingEl.textContent = pending;
+            if (confirmedEl) confirmedEl.textContent = confirmed;
+            if (rejectedEl) rejectedEl.textContent = rejected;
+            if (totalEl) totalEl.textContent = formatPrice(total);
+            if (badgeEl) badgeEl.textContent = pending;
+        }
+
+        function savePayments() {
+            localStorage.setItem('payments', JSON.stringify(payments));
+        }
+
+        function saveConversations() {
+            localStorage.setItem('conversations', JSON.stringify(conversations));
+        }
+
+        // Integrate with checkout - modify submitPayment
+        const originalSubmitPayment = submitPayment;
+        submitPayment = function() {
+            console.log('submitPayment override called');
+            console.log('Cart length:', state.cart.length);
+            console.log('checkoutData:', checkoutData);
+            
+            // Instead of direct submission, open receipt modal
+            if (state.cart.length === 0) {
+                showToast('Your cart is empty', 'warning');
+                return;
+            }
+            
+            // Check if buyer info is filled (use buyerInfo nested structure)
+            if (!checkoutData.buyerInfo.name || !checkoutData.buyerInfo.email) {
+                console.log('Validation failed: name or email missing');
+                showToast('Please fill in your information first', 'warning');
+                showCheckoutStep(1);
+                return;
+            }
+            
+            // Also check if crypto is selected
+            if (!checkoutData.selectedCrypto) {
+                console.log('Validation failed: crypto not selected');
+                showToast('Please select a cryptocurrency', 'warning');
+                return;
+            }
+            
+            console.log('Validation passed, opening payment receipt modal');
+            openPaymentReceiptModal();
+        };
+
+        // Initialize payments table when admin page loads
+        const originalNavigateAdminPage2 = navigateAdminPage;
+        navigateAdminPage = function(page) {
+            originalNavigateAdminPage2(page);
+            if (page === 'payments') {
+                renderPaymentsList('pending');
+            }
+        };
+
+        // Cleanup timers on page unload
+        window.addEventListener('beforeunload', () => {
+            Object.keys(botTimers).forEach(id => {
+                if (botTimers[id].timer) {
+                    clearTimeout(botTimers[id].timer);
+                }
+            });
+            botTimers = {};
         });
     </script>
 </body>
