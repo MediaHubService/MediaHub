@@ -118,8 +118,8 @@ body {
     transform: translateZ(20px);
 }
 
-/* Navigation */
-nav {
+/* Navigation (Top Navbar) */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -647,14 +647,16 @@ footer {
     display: none;
     position: fixed;
     bottom: 0;
+    top: auto; /* Explicitly reset top to prevent full-screen stretch */
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 15, 0.85);
+    height: 70px; /* Fixed height for the bar */
+    background: rgba(10, 10, 15, 0.95);
     backdrop-filter: blur(20px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     justify-content: space-around;
     align-items: center;
-    padding: 12px 0;
+    padding: 0;
     z-index: 1000;
 }
 
