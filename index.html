@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaHub | Premium Social Media Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+        <div class="light-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo">Media<span>Hub</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions" style="display: flex; align-items: center;">
+            <div class="search-nav">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearch" placeholder="Search accounts...">
+            </div>
+            <button class="btn-primary">Get Started</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">Elevate Your Social Presence with <span>MediaHub</span></h1>
+                <p class="animate-text-delay">The most trusted marketplace to buy premium social media accounts. Instant delivery, verified security.</p>
+
+                <div class="search-container animate-text-delay">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="heroSearch" placeholder="What are you looking for? (e.g. Instagram Tech)">
+                </div>
+
+                <div class="hero-btns animate-text-delay">
+                    <a href="marketplace.html" class="btn-primary">Browse Accounts</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-3d-container" id="hero-canvas">
+                <!-- 3D Element will be rendered here via JS -->
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Transactions</h3>
+                    <p>Every purchase is protected with our advanced escrow system.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Delivery</h3>
+                    <p>Get your account credentials immediately after payment.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Verified Accounts</h3>
+                    <p>All accounts are manually verified for quality and authenticity.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 MediaHub. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
