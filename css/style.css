@@ -162,6 +162,20 @@ nav {
     color: var(--primary-color);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+}
+
 /* Hero Section */
 .hero {
     height: 90vh;
@@ -667,21 +681,140 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .hero {
+@media (max-width: 1024px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(5, 5, 7, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+        gap: 30px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .search-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
         text-align: center;
         height: auto;
-        padding-top: 50px;
+        padding: 40px 5% 80px;
+        gap: 30px;
     }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
     }
+
     .hero-3d-container {
         width: 100%;
         height: 300px;
     }
-    .nav-links {
+
+    .desktop-only {
         display: none;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .features {
+        padding: 60px 5%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Marketplace & Ad Banner Responsive */
+@media (max-width: 768px) {
+    .tabs {
+        gap: 10px;
+        padding: 0 5%;
+    }
+
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .market-grid {
+        padding: 20px 5%;
+        grid-template-columns: 1fr;
+    }
+
+    .search-container {
+        padding: 0 5% !important;
+    }
+
+    .search-container .search-icon {
+        left: calc(5% + 18px) !important;
+    }
+
+    header h1 {
+        font-size: 2rem !important;
+    }
+
+    .ad-banner {
+        padding: 20px;
+    }
+
+    .ad-banner > div {
+        flex-direction: column;
+        gap: 20px !important;
+    }
+
+    .ad-banner div[style*="flex: 0 0 200px"] {
+        flex: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-right: 0 !important;
+        padding-bottom: 20px !important;
     }
 }
