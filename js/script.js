@@ -726,6 +726,19 @@ const initModal = () => {
         }
     });
 
+    // Mobile Swipe to Close (Simplified)
+    let touchStartY = 0;
+    modal.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    modal.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        if (touchEndY - touchStartY > 100) { // Swipe down
+            closeModal();
+        }
+    });
+
     // Purchase Flow
     if (purchaseBtn) {
         purchaseBtn.addEventListener('click', () => {
