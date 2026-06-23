@@ -16,10 +16,12 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
     background-color: var(--bg-dark);
     color: var(--text-white);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     line-height: 1.6;
 }
 
@@ -746,36 +748,16 @@ footer {
 /* Responsive */
 @media (max-width: 1024px) {
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: rgba(5, 5, 7, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1050;
-        gap: 30px;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
+        display: none; /* Hide side menu entirely in favor of Bottom Nav */
     }
 
     .menu-toggle {
-        display: block;
+        display: none; /* Hide hamburger icon on mobile/tablet */
+    }
+
+    .navbar {
+        justify-content: center; /* Center logo for a cleaner look */
+        padding: 15px 0;
     }
 
     .search-nav {
