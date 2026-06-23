@@ -19,8 +19,8 @@
 html, body {
     background-color: var(--bg-dark);
     color: var(--text-white);
-    overflow-x: hidden;
-    width: 100%;
+    overflow-x: hidden !important;
+    width: 100vw;
     position: relative;
     line-height: 1.6;
 }
@@ -747,27 +747,19 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .nav-links {
-        display: none; /* Hide side menu entirely in favor of Bottom Nav */
-    }
-
-    .menu-toggle {
-        display: none; /* Hide hamburger icon on mobile/tablet */
+    #navLinks, #mobileMenu, .nav-links, .menu-toggle {
+        display: none !important;
     }
 
     .navbar {
-        justify-content: center; /* Center logo for a cleaner look */
-        padding: 15px 0;
-    }
-
-    .search-nav {
-        display: none;
+        justify-content: center !important;
+        padding: 15px 0 !important;
     }
 }
 
 @media (max-width: 768px) {
-    nav {
-        padding: 15px 5%;
+    .navbar {
+        padding: 15px 5% !important;
     }
 
     .hero {
